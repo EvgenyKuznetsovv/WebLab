@@ -1,12 +1,13 @@
 {
-  "name": "clothing_store",
+  "name": "server",
   "version": "1.0.0",
-  "description": "weblab",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js"
   },
-  "author": "eugene kuznetsov",
+  "keywords": [],
+  "author": "Eugene Kuznetsov",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
