@@ -1,0 +1,32 @@
+.BodyForMain{
+    font-size: large;
+    color: #282c34;
+}
+
+.Advantage{
+  margin: 20px;
+  padding: 5px 15px;
+  border: 3px solid  rgb(235, 113, 113);
+  border-radius: 40px;
+  background-color:#282c34;
+  color: white;
+  
+}
+
+.Advantages{
+  margin-top: 80px;
+  font-size: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
+  box-sizing: border-box;
+}
+
+.Title-adv{
+    color: rgb(235, 113, 113);
+}
+
+.Title-welcome{
+    margin-top: 50px;
+    font-size: 2em;
+}
