@@ -1,0 +1,27 @@
+form {
+  max-width: 400px;
+  margin: 100px auto;
+  background: #282c34;
+  border-radius: 30px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 30px 20px 0px 20px;
+  box-sizing: border-box;
+}
+
+.LogBut {
+  background-color: rgb(235, 113, 113);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color:rgb(248, 143, 143);
+}

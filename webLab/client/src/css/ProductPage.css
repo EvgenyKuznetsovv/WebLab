@@ -1,4 +1,18 @@
-.Test {
-    background-color:aquamarine;
-    color: black;
+.Info-about-product{
+    float: left;
+    background-color: rgb(118, 206, 177);
+    margin-top: 50px;
+    width: 500px;
+    border: 2px solid  rgb(235, 113, 113);
+    border-radius: 30px;
+    margin-left: 50px;
+    padding: 0px 10px;
+}
+
+.Image-About-Product{
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin-left: 350px;
+    
 }

@@ -1,0 +1,21 @@
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  background-color: #282c34;
+  padding: 0px 10px 12px 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  background-color: #346060;
+}
+
+.active {
+  background-color:  #5c8484;
+}

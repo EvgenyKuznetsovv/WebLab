@@ -33,7 +33,7 @@ class ProductController {
 	async getAll(req, res) {
 		let {brandId, typeId, limit, page} = req.query;
 		page = page || 1;
-		limit = limit || 9;
+		limit = limit || 15;
 		let offset = page * limit - limit;
 		let products;
 
@@ -59,7 +59,7 @@ class ProductController {
 			{where: {id}}
 
 		)
-			return res.json(product);
+		return res.json(product);
 	}
 
 	async delete(req, res, next){

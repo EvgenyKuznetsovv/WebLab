@@ -2,6 +2,12 @@ const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const {User, Basket} = require('../models/models')
+const { OAuth2Client } = require('google-auth-library')
+
+const client = new OAuth2Client({
+	clientId:
+		'671862990159-a8topj51d8ru1rt4p3q99phca0bp0vr3.apps.googleusercontent.com',
+})
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
@@ -45,6 +51,29 @@ class UserController {
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({token})
     } 
+
+    async loginGoogle(req, res) {
+        const idToken = req.body.token
+        const ticket = await client.verifyIdToken({ idToken })
+
+        const { email } = ticket.getPayload()
+
+        const user = await User.findOne({ where: { email } })
+
+        if (user) {
+            const token = generateJwt(user.id, user.email, user.role)
+            return res.json({ token })
+        }
+
+        const newUser = await User.create({
+            email,
+            password: 'google',
+        })
+
+        const token = generateJwt(newUser.id, newUser.email, newUser.role)
+        return res.json({ token })
+
+    }
 
     async check(req, res, next){
         const token = generateJwt(req.user.id, req.user.email, req.user.role)

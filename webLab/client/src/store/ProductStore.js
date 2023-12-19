@@ -51,7 +51,7 @@ export default class ProductStore {
 		this._brands = brands
 	}
 
-	setDevices(products) {
+	setProducts(products) {
 		this._products = products
 	}
 

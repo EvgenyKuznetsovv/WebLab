@@ -10,12 +10,12 @@ export const Context = createContext(null);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Context.Provider value={{
-    user: new UserStore(),
-    product: new ProductStore(),
-  }}>
+  //<Context.Provider value={{
+   // user: new UserStore(),
+  //  product: new ProductStore(),
+  //}}>
      <App />
-  </Context.Provider>
+ //</Context.Provider>
 );
 
 

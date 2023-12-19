@@ -1,26 +1,21 @@
-import logo from './logo.svg';
 import './css/App.css'
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import React from 'react';
+import Header from './components/Header';
+import NavBar from './components/NavBar';
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
-class Header extends React.Component{
-  render(){
-    return (
-		<header className='App-header'>
-			<img src={logo} className='App-logo' alt='logo' />
-			<h2 className='NameOfTheShop'>{this.props.title}</h2>
-		</header>
-	)
-  }
-}
 
 function App() {
   return (
 		<div className='App'>
-			<Header title='Clothing Shop'/>
 			<BrowserRouter>
-				<AppRouter />
+				<GoogleOAuthProvider clientId='671862990159-a8topj51d8ru1rt4p3q99phca0bp0vr3.apps.googleusercontent.com'>
+					<Header title='Clothing Shop' />
+					<NavBar />
+					<AppRouter />
+				</GoogleOAuthProvider>
 			</BrowserRouter>
 		</div>
 	)

@@ -10,16 +10,19 @@ const NotFound = () => {
 
 const AppRouter = () => {
     //const isAuth = false; // авторизован пользователь или нет
-    const {user} = useContext(Context)
-    console.log(user)
+    //const {user} = useContext(Context)
+	//localStorage.setItem('token', "vava");
+	const token = localStorage.getItem('token')
+	console.log(token)
+	let user = true;
     return (
 			<Routes>
-				{user.isAuth &&
+				{user &&
 					authRoutes.map(({ path, Component }) => (
-						<Route key={path} path={path} element={<Component />} exact />
+						<Route  path={path} Component={Component} exact />
 					))}
 				{publicRoutes.map(({ path, Component }) => (
-					<Route key={path} path={path} element={<Component />} exact />
+					<Route path={path} Component={Component} exact />
 				))}
 				<Route path={'*'} Component={NotFound}></Route>
 			</Routes>
